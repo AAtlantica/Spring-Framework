@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="empleadoMapper" class="mapper.com.springframework.EmpleadoMapper">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="empleadoRepository" class="repository.com.springframework.EmpleadoRepository">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <bean id="empleadoServicioImpl" class="impl.service.com.springframework.EmpleadoServicioImpl">
+        <constructor-arg name="empleadoMapper" ref="empleadoMapper"/>
+        <constructor-arg name="empleadoRepository" ref="empleadoRepository"/>
+    </bean>
+
+
+
+</beans>
+
